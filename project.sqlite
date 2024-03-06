@@ -1,0 +1,66 @@
+-- SELECT *
+-- FROM startups;
+
+-- I - Calculate the total number of companies in the table.
+
+-- SELECT COUNT(name) as Companies 
+-- FROM startups;
+
+-- II - We want to know the total value of all companies in this table.
+
+-- SELECT SUM(valuation) AS total_value
+-- FROM startups;
+
+-- III - What is the highest amount raised by a startup?
+
+-- SELECT name, MAX (raised)
+-- FROM startups 
+-- GROUP BY 1
+-- ORDER BY 2 DESC; 
+
+-- IV - Edit the query so that it returns the maximum amount of money raised, during ‘Seed’ stage.
+
+-- SELECT name, MAX (raised)
+-- FROM startups 
+-- WHERE stage = 'Seed'
+-- GROUP BY 1
+-- ORDER BY 2 DESC; 
+
+-- V - In what year was the oldest company on the list founded?
+
+-- SELECT name, founded
+-- FROM startups
+-- ORDER BY 2 ASC; 
+
+-- VI - Return the average valuation
+
+-- SELECT AVG(valuation)
+-- FROM startups;
+
+-- VII - Return the average valuation, in each category, 
+-- Round the averages to two decimal places,
+-- Lastly, order the list from highest averages to lowest.
+
+-- SELECT category,
+--        ROUND(AVG(valuation),2) AS avg_valuation
+-- FROM startups
+-- GROUP BY category
+-- ORDER BY 2 DESC;
+
+-- VIII - Next, filter the result to only include categories that have more than three companies in them.
+-- What are the most competitive markets?
+
+-- SELECT COUNT (name) AS total, 
+--         category
+-- FROM startups
+-- GROUP BY category
+-- HAVING total > 3
+-- ORDER BY 1 DESC; 
+
+-- IX - What is the average size of a startup in each location, with average sizes above 500?
+
+-- SELECT location, ROUND(AVG(employees), 0) AS avg_employees
+-- FROM startups
+-- GROUP BY location
+-- HAVING avg_employees > 500
+-- ORDER BY 2 DESC;
