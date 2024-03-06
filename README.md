@@ -5,3 +5,5 @@ exploring trends in the startups world.
 
 Using SQL, with focus on aggregate functions, I aim to extract meanningful 
 insights from the dataset. 
+
+The project file is called "project.sqlite". 
